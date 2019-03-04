@@ -82,6 +82,11 @@ struct Node *del_by_index (struct Node *lst, int ind) {
 }
 struct Node *del_by_val (struct Node *lst, int val) {// deletes first occurrence of given value
 	if (!lst) return lst;
+	if (val==lst->val) {
+		struct Node *tmp=lst->next;
+		free(lst);
+		return tmp;
+	}
 	struct Node *prev=lst;
 	for (struct Node *cur=lst; cur; cur=cur->next) {
 		if (cur->val==val) {
