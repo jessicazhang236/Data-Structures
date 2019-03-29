@@ -94,10 +94,7 @@ struct Node *del_by_val (struct Node *lst, int val) {// deletes first occurrence
 			free(cur);
 			return lst;
 		}
-		else {
-			++i;
-			prev=cur;
-		}
+		else prev=cur;
 	}
 	return lst;
 }
